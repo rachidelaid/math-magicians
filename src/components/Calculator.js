@@ -1,8 +1,12 @@
 import React from 'react';
 import './Calculator.css';
 
-// eslint-disable-next-line react/prefer-stateless-function
 export default class Calculator extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
   render() {
     const btns = [
       'AC',
