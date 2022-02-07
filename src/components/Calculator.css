@@ -1,0 +1,30 @@
+.calculator {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  text-align: right;
+  background-color: #b6b6b6;
+  padding: 1rem 0.5rem;
+  color: #fff;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.btn {
+  background-color: #e0e0e0;
+  padding: 1rem 0;
+  border: 1px solid #b6b6b6;
+}
+
+.btn.operator {
+  background-color: #f5913e;
+}
+
+.span-2 {
+  grid-column: span 2;
+}
