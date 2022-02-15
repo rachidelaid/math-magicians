@@ -48,27 +48,30 @@ const Calculator = () => {
   const { total, next } = state;
 
   return (
-    <section className="calculator">
-      {total ? (
-        <div className="input">{total}</div>
-      ) : (
-        <div className="input">{next}</div>
-      )}
+    <section className="calculator-wrap">
+      <h3>Let&apos;s do some math!</h3>
+      <div className="calculator">
+        {total ? (
+          <div className="input">{total}</div>
+        ) : (
+          <div className="input">{next}</div>
+        )}
 
-      <div className="buttons">
-        {btns.map((btn) => (
-          <button
-            onClick={handleClick}
-            type="button"
-            key={btn}
-            name={btn}
-            className={`btn ${operators.includes(btn) ? 'operator' : ''} ${
-              btn === '0' ? 'span-2' : ''
-            }`}
-          >
-            {btn}
-          </button>
-        ))}
+        <div className="buttons">
+          {btns.map((btn) => (
+            <button
+              onClick={handleClick}
+              type="button"
+              key={btn}
+              name={btn}
+              className={`btn ${operators.includes(btn) ? 'operator' : ''} ${
+                btn === '0' ? 'span-2' : ''
+              }`}
+            >
+              {btn}
+            </button>
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -7,6 +7,8 @@
 - Make simple calculations.
 - Read a random math-related quote.
 
+![screenshot](./screenshot.png)
+
 ## Built With
 
 - HTML
@@ -43,3 +45,9 @@ Then run the server:
 ## Show your support
 
 Give a ⭐️ if you like this project!
+
+Feel free to check the [issues page](../../issues/).
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
