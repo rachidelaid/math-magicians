@@ -14,7 +14,7 @@ const Quote = () => {
 
   return (
     <section className="quote">
-      <h2>{list[Math.floor(Math.random() * 8)]}</h2>
+      <h2 data-testid="quote">{list[Math.floor(Math.random() * 8)]}</h2>
     </section>
   );
 };

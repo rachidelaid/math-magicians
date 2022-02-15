@@ -6,8 +6,9 @@ import '@testing-library/jest-dom';
 import Nav from '../components/Nav';
 import Home from '../components/Home';
 import Calculator from '../components/Calculator';
+import Quote from '../components/Quote';
 
-describe('Navbar Test',()=>{
+describe('Navbar Test', () => {
   test('render nav bar', () => {
     const { container, getByText } = render(
       <MemoryRouter>
@@ -50,7 +51,7 @@ describe('Navbar Test',()=>{
       </nav>
     `);
   });
-  
+
   test('test link click', () => {
     render(
       <MemoryRouter>
@@ -58,7 +59,7 @@ describe('Navbar Test',()=>{
       </MemoryRouter>,
     );
     fireEvent.click(screen.getByText('Quotes'));
-  
+
     expect(screen.getByText('Quotes')).toMatchInlineSnapshot(`
       <a
         aria-current="page"
@@ -69,36 +70,38 @@ describe('Navbar Test',()=>{
       </a>
     `);
   });
-})
+});
 
-describe('Testing Home Component',()=>{
-  test('render homepage',()=>{
-    render(
-        <Home />  
-  )
-  expect(screen.getByText('Welcome to our page!')).toMatchInlineSnapshot(`
+describe('Testing Home Component', () => {
+  test('render homepage', () => {
+    render(<Home />);
+    expect(screen.getByText('Welcome to our page!')).toMatchInlineSnapshot(`
   <h3>
     Welcome to our page!
   </h3>
-  `)
-}
-  )}
-)
+  `);
+  });
+});
 
-describe('Testing Calculator Component',()=>{
-  test('render homepage',()=>{
-    render(
-        <Calculator />  
-  )
-  fireEvent.click(screen.getByText('5'));
-  fireEvent.click(screen.getByText('4'));
-  expect(screen.getByText('54')).toMatchInlineSnapshot(`
+describe('Testing Calculator Component', () => {
+  test('clicking some buttons', () => {
+    render(<Calculator />);
+    fireEvent.click(screen.getByText('5'));
+    fireEvent.click(screen.getByText('4'));
+    expect(screen.getByText('54')).toMatchInlineSnapshot(`
   <div
     class="input"
   >
     54
   </div>
-  `)
-}
-  )}
-)
+  `);
+  });
+});
+
+describe('Testing Quote Component', () => {
+  test("the quote shouldn't be empty", () => {
+    render(<Quote />);
+
+    expect(screen.getAllByTestId('quote')).toBeTruthy();
+  });
+});
