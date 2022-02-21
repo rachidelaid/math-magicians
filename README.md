@@ -16,6 +16,11 @@
 - JavaScript
 - React
 
+## Live Demo
+
+a live link from [herokuapp](https://math-magicians-reactjs.herokuapp.com/).
+a live link from [netlify](https://reactjs-math-magicians.netlify.app/).
+
 ## Getting Started
 
 Clone project, run in your terminal:
